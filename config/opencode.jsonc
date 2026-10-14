@@ -1,0 +1,88 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  // qwen3.6 is the default (about twice as fast as gemma4 with the same pass rate in our evals).
+  // gemma4 is the small/background model and the second opinion. Both have no monthly token quota on NaN.
+  "model": "nan/qwen3.6",
+  "small_model": "nan/gemma4",
+  "enabled_providers": ["nan"],
+
+  // Versions are pinned on purpose; upgrade by editing install.sh and this file together.
+  "autoupdate": false,
+  // Never publish sessions to a public link.
+  "share": "disabled",
+
+  "compaction": { "auto": true, "prune": true },
+
+  "permission": {
+    // Rules are evaluated top to bottom and the LAST match wins: broad rules first, narrow ones last.
+    "edit": {
+      "*": "allow",
+      "**/.env": "deny",
+      "**/.env.*": "deny",
+      "**/*.pem": "deny",
+      "**/*.key": "deny",
+      "**/id_rsa*": "deny",
+      "**/secrets/**": "deny",
+      "**/.env.example": "allow"
+    },
+    // Best-effort guard rails that match common command shapes. They are not a sandbox.
+    "bash": {
+      "*": "allow",
+      "sudo *": "deny",
+      "rm -rf /": "deny",
+      "rm -rf /*": "deny",
+      "rm -rf ~": "deny",
+      "rm -rf ~/*": "deny",
+      "git push --force*": "deny",
+      "git push -f*": "deny",
+      "git reset --hard*": "deny",
+      "git clean -f*": "deny",
+      "git clean *-*f*": "deny",
+      "git push * --force*": "deny",
+      "git push * -f*": "deny",
+      "git * reset --hard*": "deny",
+      "rm -fr /*": "deny",
+      "rm -fr ~*": "deny"
+    },
+    "external_directory": "allow"
+  },
+
+  "mcp": {
+    // The only MCP server: a real browser for exploring pages and finding locators.
+    // Uses the Google Chrome installed on the machine. Add "--headless" to hide the window.
+    "playwright": {
+      "type": "local",
+      "command": ["npx", "-y", "@playwright/mcp@0.0.77"],
+      "enabled": true
+    }
+  },
+
+  "provider": {
+    "nan": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "NaN",
+      "options": {
+        "baseURL": "https://api.nan.builders/v1",
+        // Read from the environment at startup. The key is never stored in this file.
+        "apiKey": "{env:NAN_API_KEY}"
+      },
+      "models": {
+        "qwen3.6": {
+          "name": "NaN qwen3.6",
+          "limit": { "context": 262144, "output": 32768 },
+          "attachment": true,
+          "modalities": { "input": ["text", "image"], "output": ["text"] },
+          "options": { "reasoningEffort": "high" }
+        },
+        "gemma4": {
+          "name": "NaN gemma4",
+          "limit": { "context": 262144, "output": 32768 },
+          "attachment": true,
+          "modalities": { "input": ["text", "image"], "output": ["text"] },
+          "options": { "reasoningEffort": "high" }
+        }
+      }
+    }
+  }
+}
