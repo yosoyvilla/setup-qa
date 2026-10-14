@@ -1,0 +1,11 @@
+Write API tests in tests/api.spec.ts using Playwright's `request` fixture (no browser, no page navigation) for the shop API at the running base URL.
+
+Endpoints: POST /api/login with {email, password} returns 200 {name, token} or 401 {error}; GET /api/products?q=<text> returns a JSON array of products; POST /api/cart with {id} returns {count}. Log in first: the cart is reset on every successful login.
+
+Acceptance criteria:
+- AC1: logging in as alice@example.com / Passw0rd! returns 200 with name "Alice Reyes" and a non-empty token.
+- AC2: a wrong password returns 401 with error "Invalid credentials".
+- AC3: GET /api/products?q=mug returns exactly one product, "Camp Mug".
+- AC4: after logging in, adding a product to the cart twice returns count 1 and then count 2.
+
+Run the tests and make sure they pass. They must catch regressions of these criteria.

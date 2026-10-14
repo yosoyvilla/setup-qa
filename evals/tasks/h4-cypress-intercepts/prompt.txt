@@ -1,0 +1,3 @@
+We are moving from Cypress to Playwright. The Cypress project is in cypress/ (e2e/shop.cy.js, a custom `login` command in support/commands.js, and a fixture). Port all five tests to Playwright (TypeScript) in tests/shop.spec.ts.
+
+Keep every test and the intent of every assertion, including the network interception and the waits on API calls (use Playwright's equivalents, not fixed sleeps). Run the ported tests against the running app and make sure they pass.

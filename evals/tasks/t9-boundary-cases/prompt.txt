@@ -1,0 +1,8 @@
+Write Playwright tests in tests/boundaries.spec.ts for the product search and cart on the /products page (log in first as alice@example.com / Passw0rd!; the cart resets on login).
+
+Requirements from the spec:
+- R1: search is case-insensitive: "mug" and "MUG" both show exactly one product, "Camp Mug".
+- R2: a search with no matches ("zzz") shows no products at all.
+- R3: adding products to the cart accumulates: after adding two products the cart count shows 2.
+
+Inspect the running site to find reliable locators. Run the tests and make sure they pass. They must catch regressions of these requirements.

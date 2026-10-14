@@ -1,0 +1,5 @@
+{ "sut": {"UI": "v1", "LATENCY": "0", "BUG": "search-ignores-filter,cart-count-stale"}, "min_tests": 0, "forbid": [],
+  "unchanged": ["tests/login.spec.ts", "tests/search.spec.ts", "tests/cart.spec.ts", "tests/header.spec.ts"],
+  "checks": [{"file": "triage.json", "entries": {"key": "failures", "match": "test", "value": "cause", "exact_len": 5,
+    "expect": {"for mug": "app-bug-search", "for bag": "app-bug-search", "adding one": "app-bug-cart", "adding two": "app-bug-cart", "first name": "test-bug"}}}],
+  "scenarios": [] }

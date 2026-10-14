@@ -1,0 +1,4 @@
+{ "sut": {"UI": "v2", "LATENCY": "0"}, "min_tests": 0, "forbid": [],
+  "unchanged": ["tests/cart.spec.ts"],
+  "checks": [{"file": "triage.json", "json_equals": {"category": "test-bug"}, "regex": {"summary": "test ?id|locator|selector|markup"}, "min_len": {"repro": 2}}],
+  "scenarios": [] }

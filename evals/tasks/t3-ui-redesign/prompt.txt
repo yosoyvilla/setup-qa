@@ -1,0 +1,3 @@
+The shop was redesigned and the new UI is what is running now. The old test ids were removed in favour of accessible markup, so tests/shop.spec.ts (written for the old UI) now fails.
+
+Update the tests so they pass against the new UI. Keep every test and keep the intent of every assertion: do not delete or skip tests and do not weaken assertions. Prefer role-based and label-based locators.

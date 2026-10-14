@@ -1,0 +1,6 @@
+CI is red on tests/cart.spec.ts; the failure output is in ci-failure.log and the intended behaviour is in SPEC.md. The application is running at the base URL. Find the root cause by investigating the running application (HTTP requests, page inspection). Decide whether it is a bug in the application under test, a bug in the test, or an environment problem.
+
+Do not modify the test. Write your finding to triage.json with exactly these keys:
+- "category": one of "app-bug", "test-bug", "environment"
+- "summary": one sentence naming the failing behaviour
+- "repro": a list of at least two reproduction steps

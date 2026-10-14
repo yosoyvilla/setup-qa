@@ -1,0 +1,8 @@
+{ "sut": {"UI": "v2", "LATENCY": "0"}, "min_tests": 4, "forbid": ["test.skip", "test.fixme", "page.route"],
+  "scenarios": [
+    {"name": "good-v2", "env": {"UI": "v2"}, "expect": "pass", "repeat": 1},
+    {"name": "bug-login-any-password", "env": {"UI": "v2", "BUG": "login-any-password"}, "expect": "fail", "repeat": 1},
+    {"name": "bug-login-no-error", "env": {"UI": "v2", "BUG": "login-no-error"}, "expect": "fail", "repeat": 1},
+    {"name": "bug-search-ignores-filter", "env": {"UI": "v2", "BUG": "search-ignores-filter"}, "expect": "fail", "repeat": 1},
+    {"name": "bug-cart-count-stale", "env": {"UI": "v2", "BUG": "cart-count-stale"}, "expect": "fail", "repeat": 1}
+  ] }

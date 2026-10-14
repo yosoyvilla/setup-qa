@@ -1,0 +1,3 @@
+Incident report: in production, the product search returned every product for any query, and the cart badge stopped updating after adding items. Our CI suite in tests/shop.spec.ts stayed green the whole time.
+
+Find out why the suite did not catch these regressions and fix it, so that it would have failed. Keep the three tests (you can strengthen them) and do not skip anything. Run the suite and make sure it passes against the current, healthy app.

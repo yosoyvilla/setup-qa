@@ -1,0 +1,7 @@
+{ "sut": {"UI": "v1", "LATENCY": "0"}, "min_tests": 3, "forbid": ["test.skip", "test.fixme"],
+  "scenarios": [
+    {"name": "good", "env": {"UI": "v1"}, "expect": "pass", "repeat": 1},
+    {"name": "bug-search-ignores-filter", "env": {"UI": "v1", "BUG": "search-ignores-filter"}, "expect": "fail", "repeat": 1},
+    {"name": "bug-search-case-sensitive", "env": {"UI": "v1", "BUG": "search-case-sensitive"}, "expect": "fail", "repeat": 1},
+    {"name": "bug-cart-count-stale", "env": {"UI": "v1", "BUG": "cart-count-stale"}, "expect": "fail", "repeat": 1}
+  ] }

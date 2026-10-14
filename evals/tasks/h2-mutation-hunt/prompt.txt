@@ -1,0 +1,5 @@
+User story: "As a shopper I can sign in, search the catalogue, and add products to my cart."
+
+Registered account: alice@example.com / Passw0rd!. The shop is running at the base URL (pages /login and /products). The catalogue has five products. You cannot see the application source.
+
+Write a thorough end-to-end regression suite in tests/shop.spec.ts. It will be judged by how many realistic defects it would catch if they were introduced later (wrong behaviour on bad input, edge cases, boundaries), not just by passing today. Run it and make sure it passes.

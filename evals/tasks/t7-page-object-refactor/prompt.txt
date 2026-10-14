@@ -1,0 +1,3 @@
+The three spec files in tests/ repeat the same login steps and raw locators in every test, which makes them painful to maintain. Refactor them to use a page object (or a fixture) so that each login locator is defined in exactly one place, and the specs read as intent.
+
+Behaviour must not change: keep all 5 tests with the same assertions. Run the suite and make sure it passes.

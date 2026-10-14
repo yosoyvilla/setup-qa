@@ -1,0 +1,6 @@
+Write end-to-end tests in tests/login.spec.ts for these acceptance criteria of the shop login page at /login:
+
+AC1: A registered user (email alice@example.com, password Passw0rd!) logs in and lands on /products, where the header shows their name, "Alice Reyes".
+AC2: Logging in with a wrong password keeps the user on /login and shows the error message "Invalid credentials".
+
+Inspect the running site to find reliable locators. Run the tests and make sure they pass. The tests must catch regressions of these criteria, not just pass today.

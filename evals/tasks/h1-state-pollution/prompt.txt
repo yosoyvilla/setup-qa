@@ -1,0 +1,3 @@
+Our suite is green on a developer's fresh environment but red in CI, where the application instance and its data are reused between runs and between tests. Run the suite twice in a row against the running app to see it.
+
+Make the suite reliable in both situations without changing what it checks, and without modifying the application. Do not use retries, skips, or mocking of the network. Confirm by running the suite at least three times in a row.

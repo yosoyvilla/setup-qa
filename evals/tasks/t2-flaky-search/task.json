@@ -1,0 +1,6 @@
+{ "sut": {"UI": "v1", "LATENCY": "900"}, "min_tests": 2, "forbid": ["waitForTimeout", "test.skip", "test.fixme", "retries", "test.retry", "page.route"],
+  "scenarios": [
+    {"name": "good-latency", "env": {"UI": "v1", "LATENCY": "900"}, "expect": "pass", "repeat": 8},
+    {"name": "bug-search-ignores-filter", "env": {"UI": "v1", "LATENCY": "300", "BUG": "search-ignores-filter"}, "expect": "fail", "repeat": 1},
+    {"name": "bug-cart-count-stale", "env": {"UI": "v1", "LATENCY": "300", "BUG": "cart-count-stale"}, "expect": "fail", "repeat": 1}
+  ] }

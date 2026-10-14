@@ -1,0 +1,6 @@
+{ "sut": {"UI": "v1", "LATENCY": "0"}, "min_tests": 2, "forbid": [],
+  "scenarios": [
+    {"name": "good", "env": {"UI": "v1"}, "expect": "pass", "repeat": 1},
+    {"name": "bug-login-any-password", "env": {"UI": "v1", "BUG": "login-any-password"}, "expect": "fail", "repeat": 1},
+    {"name": "bug-login-no-error", "env": {"UI": "v1", "BUG": "login-no-error"}, "expect": "fail", "repeat": 1}
+  ] }

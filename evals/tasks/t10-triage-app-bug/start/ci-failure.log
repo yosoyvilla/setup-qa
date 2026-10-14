@@ -1,0 +1,13 @@
+Running 1 test using 1 worker
+
+  1) tests/cart.spec.ts:3:5 > adding a product updates the cart count
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator:  getByTestId('cart-count')
+    Expected: "1"
+    Received: "0"
+    Timeout:  5000ms
+
+  1 failed
+    tests/cart.spec.ts:3:5 > adding a product updates the cart count

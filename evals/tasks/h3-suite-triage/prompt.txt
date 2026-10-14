@@ -1,0 +1,7 @@
+The nightly run of this suite is red. The application is running at the base URL; SPEC.md describes the intended behaviour. Run `npx playwright test`, then triage EVERY failing test: decide the root cause of each by investigating the running application, not by guessing.
+
+Causes: "app-bug-search" (the search behaviour of the application is wrong), "app-bug-cart" (the cart behaviour is wrong), "test-bug" (the test itself expects the wrong thing), "environment".
+
+Do not modify any test or the application. Write triage.json:
+{"failures": [{"test": "<test title>", "cause": "<cause>"}]}
+with one entry per failing test and no entries for passing tests.

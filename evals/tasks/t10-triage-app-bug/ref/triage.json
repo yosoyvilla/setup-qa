@@ -1,0 +1,1 @@
+{ "category": "app-bug", "summary": "The cart count stays at 0 after adding a product; POST /api/cart returns count 0.", "repro": ["Log in as alice@example.com via POST /api/login", "POST /api/cart with {\"id\":1}", "Observe the response count is 0 instead of 1"] }

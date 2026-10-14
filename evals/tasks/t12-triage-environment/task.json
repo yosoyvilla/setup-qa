@@ -1,0 +1,27 @@
+{
+ "sut": {
+  "UI": "v1",
+  "LATENCY": "0"
+ },
+ "min_tests": 0,
+ "forbid": [],
+ "unchanged": [
+  "tests/cart.spec.ts",
+  "ci-config.txt"
+ ],
+ "checks": [
+  {
+   "file": "triage.json",
+   "json_equals": {
+    "category": "environment"
+   },
+   "regex": {
+    "summary": "4000|port|base.?url|connection|refused"
+   },
+   "min_len": {
+    "repro": 2
+   }
+  }
+ ],
+ "scenarios": []
+}

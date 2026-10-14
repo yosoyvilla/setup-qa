@@ -1,0 +1,10 @@
+$ set -a; . ./ci-config.txt; set +a; npx playwright test
+
+Running 1 test using 1 worker
+
+  1) tests/cart.spec.ts:5:5 > adding a product updates the cart count
+
+    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:4000/login
+
+  1 failed
+    tests/cart.spec.ts:5:5 > adding a product updates the cart count

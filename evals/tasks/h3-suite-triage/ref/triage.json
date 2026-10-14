@@ -1,0 +1,7 @@
+{"failures": [
+ {"test": "search for mug returns exactly one product", "cause": "app-bug-search"},
+ {"test": "search for bag returns exactly two products", "cause": "app-bug-search"},
+ {"test": "adding one product shows 1 in the cart", "cause": "app-bug-cart"},
+ {"test": "adding two products shows 2 in the cart", "cause": "app-bug-cart"},
+ {"test": "header greets the user by first name", "cause": "test-bug"}
+]}

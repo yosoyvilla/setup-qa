@@ -1,0 +1,3 @@
+The QA team is retiring Selenium. The Python Selenium suite is in selenium/ (pages.py and test_shop.py). Port it to Playwright (TypeScript) in tests/shop.spec.ts.
+
+Keep every test and the intent of every assertion; use Playwright's auto-waiting assertions rather than fixed sleeps. Run the ported tests against the running app and make sure they pass.

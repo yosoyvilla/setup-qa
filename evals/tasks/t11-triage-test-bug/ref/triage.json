@@ -1,0 +1,1 @@
+{ "category": "test-bug", "summary": "The test uses data-testid locators that were removed in the UI 2.0 redesign, so it cannot find the login field.", "repro": ["Open /login", "Inspect the email input: it has a label but no data-testid", "getByTestId('login-email') matches nothing"] }
