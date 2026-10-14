@@ -61,6 +61,10 @@ Results land in `evals/results/<task>/<arm>-<model>-r<rep>/` (git-ignored): the 
 
 The seeded defects live in `harness/sut-server.js` (`BUG=` flags). To add a task, create `evals/tasks/<id>/` with `prompt.txt`, `task.json`, `start/` and a reference solution in `ref/`, and confirm the self-test above: the reference must pass and the untouched start must fail.
 
+## Trust model
+
+The grader runs the agent's test files as root inside the disposable container, and the container's environment contains `NAN_API_KEY` (the agent needs it). Treat each run as running model-written code with that key in reach: use a key you can rotate and do not mount anything else of value into the container. After the agent finishes, its processes are killed before grading and the grader refuses to grade if its own copy of the app did not start.
+
 ## Limits
 
 - Cypress and Selenium cannot run in the arm64 Linux container, so they are exercised as ports to Playwright.

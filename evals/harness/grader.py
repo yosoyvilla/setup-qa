@@ -42,6 +42,8 @@ def run_scenario(i, sc):
         for _ in range(50):
             try: urllib.request.urlopen(f"http://localhost:{port}/health", timeout=1); break
             except Exception: time.sleep(0.1)
+        if sut.poll() is not None:  # our server died (for example the port is taken): never grade against something else
+            return [{"error": "system under test failed to start"}]
         runs = []
         for _ in range(sc["repeat"]):
             e = {**os.environ, "TEST_DIR": str(tests), "BASE_URL": f"http://localhost:{port}"}

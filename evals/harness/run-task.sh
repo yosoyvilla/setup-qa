@@ -66,6 +66,8 @@ case "$ARM" in
 esac
 echo "$rc" > /out/exit_code; echo $(( $(date +%s) - start )) > /out/wall_seconds
 
+# nothing the agent started may survive into grading (it could hold the port the grader uses)
+pkill -KILL -u $AGENT_UID 2>/dev/null; sleep 1
 kill "$SUT_PID" 2>/dev/null; wait "$SUT_PID" 2>/dev/null
 diff -ruN /tmp/start-snapshot /work -x node_modules -x test-results > /out/changes.diff 2>&1 || true
 python3 -I /root/bench/grader.py /root/task/task.json /work/tests > /out/grade.json 2> /out/grade.err
